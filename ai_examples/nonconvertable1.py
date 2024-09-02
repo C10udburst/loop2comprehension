@@ -36,12 +36,6 @@ for row in matrix:
     for item in row:
         print(item)
 
-# 8. Modifying a list in place
-numbers = [1, 2, 3, 4, 5]
-for i in range(len(numbers)):
-    numbers[i] *= 2
-print(numbers)
-
 # 9. Logging inside a loop
 import logging
 
