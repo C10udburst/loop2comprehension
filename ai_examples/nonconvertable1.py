@@ -3,12 +3,6 @@ with open('file.txt', 'r') as file:
     for line in file:
         print(line.strip())
 
-# 2. Writing to a file
-data = ["line1", "line2", "line3"]
-with open('output.txt', 'w') as file:
-    for item in data:
-        file.write(item + '\n')
-
 # 3. Sending HTTP requests
 import requests
 

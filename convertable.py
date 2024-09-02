@@ -25,14 +25,6 @@ def count_alive_neighbors(grid, x, y):
                 alive_neighbors += grid[x + i][y + j]
     return alive_neighbors
 
-# Example of print() with join
-def print_metrics(history):
-    """Print the metrics of each iteration."""
-    for i, metrics in enumerate(history):
-        print(f"Iteration {i + 1}:")
-        for key, value in metrics.items():
-            print(f"  {key}: {value}")
-
 # Simple example of common pattern: for [...] .append(), which should be easily converted.
 def squares_to_ten():
     squares = []
@@ -68,18 +60,9 @@ def while1():
     i = 0
     output = []
     while i < 10:
-        i += 2
+        i += 1
         output.append(i)
     print(output)
-
-# Simple nested loops example
-def nested_for_while():
-    result = []
-    j = 0
-    for i in range(5):
-        while j < 4:
-            result.append((i, j))
-    return result
 
 # Simple async example using the same common pattern
 async def resolve_entries(client):
@@ -101,6 +84,7 @@ def mult1():
     prod = 1
     for i in range(1, 11):
         prod *= i
+    return prod
 
 # Example of min() with misleading var name
 def reduce2():
@@ -109,11 +93,13 @@ def reduce2():
     for i in lst:
         if i % 2 == 0 and i < even_max:
             even_max = i
+    return even_max
 
 def reduce3():
     exp = 1
     for i in range(1, 11):
         exp = 2*exp + i
+    return exp
 
 x = 0
 for i in range(10):
@@ -125,11 +111,13 @@ for i in range(10):
         else:
             x += 1 / j ** 2
 
-a = []
-for line in poem.readlines():
-    for word in line.split():
-        if word not in a:
-            a.append(word)
+# Should convert to set/dict
+def fun4():
+    a = []
+    for line in poem.readlines():
+        for word in line.split():
+            if word not in a:
+                a.append(word)
 
 
 # Example of for ... assert -> assert all(...)
