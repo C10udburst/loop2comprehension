@@ -12,19 +12,6 @@ def fun1():
             esum += 0.21
     print(esum)
 
-# More complex example of sum() usage
-def count_alive_neighbors(grid, x, y):
-    """Count the number of alive neighbors for a cell at (x, y)."""
-    size = len(grid)
-    alive_neighbors = 0
-    for i in range(-1, 2):
-        for j in range(-1, 2):
-            if i == 0 and j == 0:
-                continue
-            if 0 <= x + i < size and 0 <= y + j < size:
-                alive_neighbors += grid[x + i][y + j]
-    return alive_neighbors
-
 # Simple example of common pattern: for [...] .append(), which should be easily converted.
 def squares_to_ten():
     squares = []
@@ -94,30 +81,6 @@ def reduce2():
         if i % 2 == 0 and i < even_max:
             even_max = i
     return even_max
-
-def reduce3():
-    exp = 1
-    for i in range(1, 11):
-        exp = 2*exp + i
-    return exp
-
-x = 0
-for i in range(10):
-    for j in range(2 * i):
-        if '0' in str(j):
-            x += j
-        elif '1' in str(j):
-            x += 1 / j
-        else:
-            x += 1 / j ** 2
-
-# Should convert to set/dict
-def fun4():
-    a = []
-    for line in poem.readlines():
-        for word in line.split():
-            if word not in a:
-                a.append(word)
 
 
 # Example of for ... assert -> assert all(...)
