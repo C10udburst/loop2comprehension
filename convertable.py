@@ -12,6 +12,18 @@ def fun1():
             esum += 0.21
     print(esum)
 
+def count_alive_neighbors(grid, x, y):
+    """Count the number of alive neighbors for a cell at (x, y)."""
+    size = len(grid)
+    alive_neighbors = 0
+    for i in range(-1, 2):
+        for j in range(-1, 2):
+            if i == 0 and j == 0:
+                continue
+            if 0 <= x + i < size and 0 <= y + j < size:
+                alive_neighbors += grid[x + i][y + j]
+    return alive_neighbors
+
 # Simple example of common pattern: for [...] .append(), which should be easily converted.
 def squares_to_ten():
     squares = []
@@ -50,21 +62,6 @@ def while1():
         i += 1
         output.append(i)
     print(output)
-
-# Simple async example using the same common pattern
-async def resolve_entries(client):
-    results = []
-    for entry in client.entries:
-        res = await entry.resolve()
-        results.append(res)
-    return results
-
-# Async example with sum()
-async def balance_sum(client):
-    cum_sum = 0
-    async for entry in client.entries:
-        cum_sum += await entry.balance()
-    return cum_sum
 
 # Example of functools.reduce()
 def mult1():
